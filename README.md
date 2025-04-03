@@ -12,6 +12,7 @@ use of Large Language Models (LLMs) and Reinforcement Learning (RL) for Autonomo
 - Octavio Villalobos
 - Jiaqi Duan 
 - Alvaro A. Cárdenas
+
 **Affiliation:** University of California, Santa Cruz (UCSC).
 
 # Installation
