@@ -1,4 +1,4 @@
-# Large Language Models are Autonomous Cyber Defenders 🛡️
+# Large Language Models are Autonomous Cyber Defenders 🛡️🤖
 
 Code artifact for the paper "Large Language Models are Autonomous Cyber Defenders." We provide the first study on the
 use of Large Language Models (LLMs) and Reinforcement Learning (RL) for Autonomous Cyber Defense (ACD) in multi-agent environments.
