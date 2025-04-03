@@ -1,0 +1,19 @@
+backend: "huggingface"
+model_name: "TinyLlama/TinyLlama-1.1B-Chat-v1.0"
+lora:
+  r: 16
+  lora_alpha: 32
+  lora_dropout: 0.05
+  bias: "none"
+  task_type: "CAUSAL_LM"
+load_in_8bit: False
+batch_size: 1
+seed: 42069
+episodes: 1000
+generate:
+  max_new_tokens: 32
+  do_sample: True
+  top_p: 0.6
+  top_k: 0
+  temperature: 0.9
+  max_length: 1024

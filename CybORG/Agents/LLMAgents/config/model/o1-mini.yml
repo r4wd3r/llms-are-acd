@@ -1,0 +1,8 @@
+backend: "new-openai"
+model_name: "o1-mini"
+seed: 42069
+episodes: 1000
+generate:
+  max_new_tokens: 32
+  temperature: 1
+  max_length: 1024
