@@ -5,6 +5,21 @@ use of Large Language Models (LLMs) and Reinforcement Learning (RL) for Autonomo
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
+# Paper
+[IEEE CAI 2025 - Adaptive Cyber Defense Workshop: Paper Pre-print](https://arxiv.org/abs/2505.04843)
+
+Citation:
+```latex
+@misc{castro2025largelanguagemodelsautonomous,
+      title={Large Language Models are Autonomous Cyber Defenders}, 
+      author={Sebastián R. Castro and Roberto Campbell and Nancy Lau and Octavio Villalobos and Jiaqi Duan and Alvaro A. Cardenas},
+      year={2025},
+      eprint={2505.04843},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI},
+      url={https://arxiv.org/abs/2505.04843}, 
+}
+```
 **Authors:** 
 - Sebastián R. Castro
 - Roberto Campbell
