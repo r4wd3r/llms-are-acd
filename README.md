@@ -6,19 +6,21 @@ use of Large Language Models (LLMs) and Reinforcement Learning (RL) for Autonomo
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 # Paper
-[IEEE CAI 2025 - Adaptive Cyber Defense Workshop: Paper Pre-print](https://arxiv.org/abs/2505.04843)
+[IEEE CAI 2025 - Adaptive Cyber Defense](https://ieeexplore.ieee.org/document/11050539)
 
 Citation:
 ```latex
-@misc{castro2025largelanguagemodelsautonomous,
-      title={Large Language Models are Autonomous Cyber Defenders}, 
-      author={Sebastián R. Castro and Roberto Campbell and Nancy Lau and Octavio Villalobos and Jiaqi Duan and Alvaro A. Cardenas},
-      year={2025},
-      eprint={2505.04843},
-      archivePrefix={arXiv},
-      primaryClass={cs.AI},
-      url={https://arxiv.org/abs/2505.04843}, 
-}
+@INPROCEEDINGS{castro2025_llms_acd,
+  author={Castro, Sebastián R. and Campbell, Roberto and Lau, Nancy and Villalobos, Octavio and Duan, Jiaqi and Cardenas, Alvaro A.},
+  booktitle={2025 IEEE Conference on Artificial Intelligence (CAI)}, 
+  title={Large Language Models are Autonomous Cyber Defenders}, 
+  year={2025},
+  volume={},
+  number={},
+  pages={1125-1132},
+  keywords={Training;Bridges;Protocols;Large language models;Human-machine systems;Reinforcement learning;Cognition;Security;Computer crime;Tuning;Autonomous Cyber Defense;Incident Response;Large Language Models;Reinforcement Learning;Ai Agents},
+  doi={10.1109/CAI64502.2025.00195}}
+
 ```
 **Authors:** 
 - Sebastián R. Castro
