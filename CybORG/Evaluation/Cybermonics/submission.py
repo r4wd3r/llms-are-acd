@@ -82,7 +82,10 @@ class CombinedWrapper(BaseWrapper):
             # Get actions for each agents possible moves
             if not NO_LLM_AGENTS:
                 phase_actions = {k: v for k, v in actions.items() if k == BLUE_AGENT_NAME}
-            graph_actions = {k: v for k, v in actions.items() if k.startswith("blue_agent_") and k != BLUE_AGENT_NAME}
+            # Only exclude the LLM slot when an LLM is actually in it. With NO_LLM_AGENTS the slot
+            # holds an RL agent, and filtering it out left blue_agent_4 sleeping every step.
+            graph_actions = {k: v for k, v in actions.items()
+                             if k.startswith("blue_agent_") and (NO_LLM_AGENTS or k != BLUE_AGENT_NAME)}
         # set vars for each wrappers outputs
         phase_obs, phase_rewards, phase_term, phase_trunc, phase_info = ({}, {}, {}, {}, {})
         graph_obs, graph_rewards, graph_term, graph_trunc, graph_info = ({}, {}, {}, {}, {})
