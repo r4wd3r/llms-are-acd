@@ -99,6 +99,20 @@ class CombinedWrapper(BaseWrapper):
         combined_actions = {**phase_actions, **translated_graph_actions}
 
         self.metrics_callback.on_step(combined_observations, combined_actions, self.phase_wrapper.env)
+        # Both wrappers sit on the same CybORG environment. When a team has both RL and LLM
+        # defenders, stepping each wrapper separately advances the simulator twice per round,
+        # each time with only half of the team's actions. Step once with everyone's action.
+        if phase_actions and graph_actions:
+            ec = self.phase_wrapper.env.unwrapped.environment_controller
+            for a in phase_actions:
+                self.graph_wrapper.msg[a] = cvg.create_comm_message(
+                    ec.get_last_observation(a), ec.get_last_action(a), ec.hostname_ip_map)
+            all_actions = {**graph_actions, **phase_actions}  # RL action ids + LLM Action objects
+            graph_obs, rewards, terminated, truncated, info = self.graph_wrapper.step(all_actions)
+            for a in phase_actions:
+                graph_obs[a] = self.phase_wrapper.observation_change(a, self.phase_wrapper.env.get_observation(a))
+            return graph_obs, rewards, terminated, truncated, info
+
         if phase_actions:
             phase_obs, phase_rewards, phase_term, phase_trunc, phase_info = self.phase_wrapper.step(phase_actions)
 

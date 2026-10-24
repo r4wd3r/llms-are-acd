@@ -5,7 +5,7 @@ import torch
 
 from CybORG.env import CybORG
 from CybORG.Agents.Wrappers.EnterpriseMAE import EnterpriseMAE
-from CybORG.Simulator.Actions.Action import Sleep
+from CybORG.Simulator.Actions.Action import Sleep, Action
 from CybORG.Shared.Enums import TernaryEnum
 
 from CybORG.Agents.Wrappers.CybermonicWrappers.observation_graph import ObservationGraph
@@ -75,7 +75,8 @@ class GraphWrapper(EnterpriseMAE):
         '''
         # Convert from model out to Action objects
         action = {
-            k:self.action_translator(k,v)
+            # Accept ready-made Action objects (e.g. from an LLM teammate) alongside RL action ids
+            k: (v if isinstance(v, Action) else self.action_translator(k,v))
             for k,v in action.items()
         }
 
